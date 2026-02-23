@@ -1,0 +1,8 @@
+pandas
+numpy
+scikit-learn
+yfinance
+matplotlib
+seasonal_decompose
+adfuller
+kpss
