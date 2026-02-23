@@ -2,7 +2,7 @@ pandas
 numpy
 scikit-learn
 yfinance
-matplotlib
+matplotlib.pyplot
 seasonal_decompose
 adfuller
 kpss
