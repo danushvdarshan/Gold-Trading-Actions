@@ -1,0 +1,7 @@
+This project was conducted as part of the elective course Machine Learning for Data Analysis at National Institute of Technology Calicut.
+
+Although my specific contributions are outlined in this repository, this was a collaborative team effort. 
+I sincerely acknowledge the valuable inputs and cooperation of my teammates throughout the project.
+
+This experience strengthened our understanding of structured problem-solving, feature engineering, model development, and 
+deriving actionable insights from data, while emphasizing the importance of iterative improvement and critical evaluation.
