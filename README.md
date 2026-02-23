@@ -5,7 +5,7 @@ Time-Series Multi-Class Prediction | Log Loss Optimization
 
 ----> Overview :
 
-      This repository contains our solution to a Kaggle-style competition conducted as part of a Machine Learning course at the Department of Management Studies, National Institute of Technology Calicut.
+      This repository contains our solution to a Kaggle-style competition conducted as part of a Machine Learning course at National Institute of Technology Calicut.
       
       The objective was to build a predictive model that classifies each trading day of Gold Futures (GC=F) into one of three actions:
       0 → Hold / No Action
@@ -53,34 +53,38 @@ Time-Series Multi-Class Prediction | Log Loss Optimization
             
 ----> Methodology :
 
-    1. Exploratory Data Analysis (EDA)
-          Checked class distribution and imbalance
-          Analyzed gold price volatility trends
-          Performed ADF and KPSS test on gold price percent change
-          Examined temporal behavior of price movements
-          Identified correlation patterns
+    1. Exploratory Data Analysis (EDA) :
+    
+          * Checked class distribution and imbalance
+          * Analyzed gold price volatility trends
+          * Performed ADF and KPSS test on gold price percent change
+          * Examined temporal behavior of price movements
+          * Identified correlation patterns
           
     2. Feature Engineering:
-          Feature engineering significantly improved model performance.
-          Lag Features
-          Previous-day price differences
-          Multi-day rolling windows
-          Volatility-based signals
-          Lag-based indicators played a major role in reducing Log Loss.
-          External Signal Integration
-          Incorporated S&P 500 index data as a macro-market indicator
-          Merged aligned time-series data using trading dates
-          External market signals helped improve generalization.
+    
+          * Feature engineering significantly improved model performance.
+          * Lag Features
+          * Previous-day price differences
+          * Multi-day rolling windows
+          * Volatility-based signals
+          * Lag-based indicators played a major role in reducing Log Loss.
+          * External Signal Integration
+          * Incorporated S&P 500 index data as a macro-market indicator
+          * Merged aligned time-series data using trading dates
+          * External market signals helped improve generalization.
           
     3. Time-Series Validation Strategy
           To prevent data leakage:
-              We avoided random shuffling
-              Used chronological splitting
-              Ensured training data preceded validation data
-              This preserved the real-world forecasting constraint.
+          
+              * We avoided random shuffling
+              * Used chronological splitting
+              * Ensured training data preceded validation data
+              * This preserved the real-world forecasting constraint.
               
     4. Model Development
           The final model was a Random Forest Classifier.
+          
               rf_final = RandomForestClassifier(
                   n_estimators=400,
                   max_depth=20,
@@ -96,9 +100,9 @@ Time-Series Multi-Class Prediction | Log Loss Optimization
           
 ----> Key considerations:
 
-      Handling class imbalance using class_weight='balanced'
-      Controlling model complexity via depth and leaf constraints
-      Parallel computation (n_jobs=-1) for efficiency
+      * Handling class imbalance using class_weight='balanced'
+      * Controlling model complexity via depth and leaf constraints
+      * Parallel computation (n_jobs=-1) for efficiency
       
 ----> Results :
 
@@ -106,9 +110,9 @@ Time-Series Multi-Class Prediction | Log Loss Optimization
       Competition Rank: 23 / 200 participants
       
       Performance improved substantially after:
-      Introducing lag features
-      Applying time-aware validation
-      Tuning tree depth and sampling parameters
+            * Introducing lag features
+            * Applying time-aware validation
+            * Tuning tree depth and sampling parameters
       
 ----> Key Insights :
 
@@ -125,4 +129,5 @@ Time-Series Multi-Class Prediction | Log Loss Optimization
       4) Probability calibration techniques (Platt scaling, isotonic regression)
       
 ----> Presentation :
+
       A 10-minute structured presentation explaining our methodology and findings is available in the /presentation directory.
